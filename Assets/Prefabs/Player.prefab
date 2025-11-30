@@ -182,7 +182,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -282,6 +282,7 @@ GameObject:
   - component: {fileID: 5556656365511396314}
   - component: {fileID: 4448364563659549695}
   - component: {fileID: 7021819571785244479}
+  - component: {fileID: 4522222390977294112}
   - component: {fileID: 7412168933117615208}
   m_Layer: 6
   m_Name: Player
@@ -322,7 +323,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7832670857729551751}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -401,14 +402,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   moveSpeed: 5
-  jumpPower: 15
-  gravity: -1
+  jumpPower: 5
+  gravity: -20
   footstepAudioSource: {fileID: 7158841411812435465}
   playerAudioSource: {fileID: 7412168933117615208}
   footstepClip: {fileID: 8300000, guid: 074352ab435a12645b2d0607918fec89, type: 3}
   jumpClip: {fileID: 8300000, guid: 4dd3709bc57e142658a6b53f15346ce6, type: 3}
   doubleJumpClip: {fileID: 8300000, guid: 4a05b5376c9ef43f4b35987fa28a8038, type: 3}
-  landingClip: {fileID: 0}
 --- !u!114 &5556656365511396314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -423,8 +423,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCamera
   invertY: 0
   playerHead: {fileID: 1110996841082549043}
-  mouseSensitivityX: 1
-  mouseSensitivityY: 1
+  mouseSensitivityX: 0.2
+  mouseSensitivityY: 0.2
 --- !u!114 &4448364563659549695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -449,6 +449,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68de35f93146bb0489a594b61e6636e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInventory
+--- !u!114 &4522222390977294112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7832670857729551751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6701e60bd9660842b4b819d4ed2e8fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  maxHealth: 100
+  takeDamageClip: {fileID: 8300000, guid: 09e22874557a04dd1834c6cc34e7afd7, type: 3}
+  healthBarSlider: {fileID: 0}
+  loseText: {fileID: 0}
 --- !u!82 &7412168933117615208
 AudioSource:
   m_ObjectHideFlags: 0

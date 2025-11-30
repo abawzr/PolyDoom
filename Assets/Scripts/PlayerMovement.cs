@@ -12,7 +12,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioClip footstepClip;
     [SerializeField] private AudioClip jumpClip;
     [SerializeField] private AudioClip doubleJumpClip;
-    [SerializeField] private AudioClip landingClip;
 
     private CharacterController _controller;
     private Vector2 _moveInput;

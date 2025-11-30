@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         SceneManager.sceneLoaded += HandleSceneChange;
+
+        SceneManager.LoadScene("MainMenu");
     }
 
     private void HandleSceneChange(Scene scene, LoadSceneMode mode)
