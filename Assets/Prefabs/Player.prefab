@@ -423,8 +423,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCamera
   invertY: 0
   playerHead: {fileID: 1110996841082549043}
-  mouseSensitivityX: 0.1
-  mouseSensitivityY: 0.1
+  mouseSensitivityX: 1
+  mouseSensitivityY: 1
 --- !u!114 &4448364563659549695
 MonoBehaviour:
   m_ObjectHideFlags: 0

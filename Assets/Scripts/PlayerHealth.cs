@@ -1,10 +1,14 @@
+using System.Collections;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private float maxHealth;
     [SerializeField] private Slider healthBarSlider;
+    [SerializeField] private TMP_Text loseText;
 
     private float _currentHealth;
 
@@ -15,9 +19,17 @@ public class PlayerHealth : MonoBehaviour
         healthBarSlider.value = _currentHealth;
     }
 
-    private void Die()
+    private IEnumerator Die()
     {
-        Debug.Log("Player Dead");
+        loseText.gameObject.SetActive(true);
+        loseText.text = "You Died!";
+
+        if (InputManager.Instance != null)
+            InputManager.Instance.TurnOffInputs();
+
+        yield return new WaitForSeconds(3f);
+
+        SceneManager.LoadSceneAsync("MainMenu");
     }
 
     public void TakeDamage(float damageAmount)
@@ -27,7 +39,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (_currentHealth <= 0f)
         {
-            Die();
+            StartCoroutine(Die());
         }
     }
 }
